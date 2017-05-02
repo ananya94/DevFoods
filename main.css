@@ -1,0 +1,61 @@
+img{
+    border: 0;
+    width: auto;
+    height: auto;
+    max-width: 50px;
+    max-height: 50px;
+}
+.navbar-brand 
+{
+    padding-top: 0;
+}
+.maintext{
+    margin-top: 19%;
+    margin-left:20px;
+}
+body{
+    
+    font-family: 'Montserrat', sans-serif;
+   
+}
+.transparent{
+        background-color: rgba(255,255,255,0.39) !important;
+}
+.container1{
+     background-image: url("/templates/eaters-collective-132773.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#address{
+    width: 222px;
+    height: 28px;
+    appearance: none;
+    margin: 0;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 50%;
+  background-color: #25B7D3;
+  color: white;
+}
+.btn-circle.btn-lg {
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  line-height: 1.33;
+  border-radius: 25px;
+    border-left: 5px;
+}
+.modal-header{
+    padding-bottom: inherit;
+}
