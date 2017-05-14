@@ -1,55 +1,14 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            <a class="navbar-brand" href="#"><img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-256.png" alt="logo"></a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Home</a></li>
-                <li class="active">
-                    <a href="#login">
-                        <div data-toggle="modal" data-target="#myModal">Login</div>
-                    </a>
-                </li>
-            </ul>
-            ` </div>
-    </div>
-</nav>
+<nav_bar></nav_bar>
 <div class="maintext">
     <h1>Delivery to your Doorstep.</h1>
     <h2>You must be hungry!</h2>
     <div class="searchResults" ng-controller="searchRes">
-   <input type="text" id="address"  ng-keypress="enter($event)" placeholder="Enter your city"/>
-    <div ng-repeat= 'info in location1' ng-model= 'location1'>
-        <ul>
-            <li><a ng-href="#!/city/{{info.id}}">{{info.name}},{{info.country_name}}</a></li>
-        </ul>
-    </div>
-</div>
-<!--
-    <form>
-        <input id="address1" type="text" placeholder="Enter Your City" />
-                           ng-keypress="enter($event)" 
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Your City
-  <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a ng-href="#!/chicago/:city_id/:city_name">Chicago</a></li>
-                <li><a ng-href="#!/newyork">New York</a></li>
-                <li><a ng-href="#!/LosAngeles">Los Angeles</a></li>
-                <li><a ng-href="#!/city/:city_id">Your City</a></li>
+        <input type="text" id="address" ng-keypress="enter($event)" placeholder="Enter your city" /><button type="button" class="btn btn-default btn-circle">GO</button>
+        <div ng-repeat='info in location1' ng-model='location1'>
+            <ul>
+                <li><a ng-href="#!/city/{{info.id}}">{{info.name}},{{info.country_name}}</a></li>
             </ul>
         </div>
-        <button type="button" class="btn btn-default btn-circle">GO</button>
-    </form>
--->
-</div >
-
-
+    </div>
+</div>
 <modal-text></modal-text>
