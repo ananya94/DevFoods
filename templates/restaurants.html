@@ -1,0 +1,100 @@
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img class="logo" src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Food-Dome-256.png" alt="logo"></a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <input type="text" placeholder="Search" ng-model="search" class="left">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">
+                        <a href="#login">
+                            <div data-toggle="modal" data-target="#myModal">Login</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="restauranttext" ng-controller="restaurantDetails">
+        <div class="restauranttitle row">
+            <div class="col-xs-6">
+                <h1 style="    margin-top: 0px;
+    margin-bottom: 10px;">{{details.name}}</h1>
+            </div>
+            <div class=" float_button col-xs-6">
+                <button type="button" class="btn btn-success btn-lg rating_button">{{details.user_rating.aggregate_rating}} / 5</button>
+            </div>
+        </div>
+        <div>
+            <ul style="list-style-type: none;">
+                <li>{{details.cuisines}}</li>
+            </ul>
+        </div>
+        <div class="picture">
+            <img class="featuredimage" ng-src='{{details.featured_image}}' onerror="this.src='templates/shanice-garcia-43229.jpg'">
+        </div><br><br>
+
+        <div class="resNavBar">
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link active resNavItem" ng-click="displayoverview()" style="color:black; border: 1px solid #efefef;">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link resNavItem" ng-click="displayreview()" style="color:black; border: 1px solid #efefef;">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link resNavItem" ng-click="displaymenu()" style="color:black; border: 1px solid #efefef;">Menu</a>
+                </li>
+            </ul>
+            
+            
+            <div ng-show="overview"><br>
+                <ul class="restaurantoverview">
+                    <li>Address: {{details.location.address}}</li>
+                    <li>Cusinies: {{details.cuisines}}</li>
+                    <li>Average cost for two: {{details.average_cost_for_two}}</li>
+                    <li>Price Range: {{details.price_range}}</li>
+                    <li>Rating: {{details.user_rating.rating_text}}, {{details.user_rating.aggregate_rating}}</li>
+                    <li>Delivery Online: Yes</li>
+                    <li>Is delivering now: Yes</li>
+                </ul>
+            </div>
+            
+            
+            <div ng-show="review">
+                <ul class="restaurantReviews">
+                    <li ng-repeat="col in collection">{{col.review.user.name}}:{{col.review.rating_text}}<br> {{col.review.review_text}}
+                    </li>
+                </ul>
+            </div>
+            
+            
+            <div class="restaurantmenu row" ng-show="menu">
+                <div ng-repeat="(cuisine, dishes) in menucontent" class="restaurantMenu col-xs-4">
+                    <h1>{{cuisine}}</h1>
+                    <div div ng-repeat="dish in dishes">
+                        <input type="checkbox" class="checkboxes" ng-click="toggleSelection()" ng-model="dish.quantity">
+                        <label>
+                        {{dish.dish_name}}:{{dish.dish_price}}</label>
+                    </div>
+                </div>
+                <div class="selectedDishes col-xs-4">
+                    <h2>Your Bag:</h2>
+                    {{selected}}
+                </div>
+                <button type="submit" ng-click="toggleselection()">CHECKOUT</button>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>

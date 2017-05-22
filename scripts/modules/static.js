@@ -32,6 +32,7 @@ static1.controller("searchRes", function ($http,$scope) {
             getlocation($http,$scope);
         }
     }
+     $("body").addClass("container1")
 });
 
 //function called for getting the location api for the location options

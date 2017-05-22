@@ -1,4 +1,4 @@
-img{
+.logo{
     border: 0;
     width: auto;
     height: auto;
@@ -8,6 +8,7 @@ img{
 .navbar-brand 
 {
     padding-top: 0;
+    margin-right: 10px;
 }
 .maintext{
     margin-top: 19%;
@@ -16,6 +17,7 @@ img{
 body{
     
     font-family: 'Montserrat', sans-serif;
+    background-color: #F3F3F3;
    
 }
 .transparent{
@@ -77,4 +79,64 @@ input[type=number]::-webkit-outer-spin-button {
 
 #map img{
     max-height: none;
+}
+.featured_image{
+    height: 500px; 
+    width:600px;
+}
+.restaurant{
+    background-color: #F1F5F1;
+    
+}
+.restauranttext{
+    font-weight:bold;
+    font-size: 14px;
+}
+
+.float_button {
+    text-align: right;
+}
+.restauranttitle{
+    background-color: #FAFAFA;
+    border-bottom: 3px solid #E7E7E8;
+    padding-left: 40px;
+    margin-top: 0px;
+}
+.rating_button{
+    display: inline-block;
+    clear: left;
+    margin-right: inherit;
+}
+.picture{
+    text-align: center;
+    margin-top: auto;
+}
+.resNavBar {
+    background-color: #FFF;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+.restaurantReviews{
+    list-style: none;
+    padding: 10px;
+}
+.restaurantReviews li:nth-child(even){
+    background-color: #F3F3F3;
+}
+.restaurantReviews li{
+    padding: 10px;
+}
+.restaurantoverview {
+   list-style: none;
+    padding: 10px;
+} 
+.restaurantoverview li{
+    padding: 10px;   
+}
+.restaurantoverview li:nth-child(even){
+   background-color: #F3F3F3; 
+}
+.restaurantmenu {
+    padding: 10px;
 }
