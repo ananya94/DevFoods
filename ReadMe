@@ -6,4 +6,10 @@
     v. set FLASK_APP = hello_wolrd.py
     v. flask run
     * Connected to 127.0.0.1.1500 - API available on the URL. 
-
+2. TO-DO:
+    1. Drop-down menu on index page
+    2. City page clean up
+    3. Map Markers: Put in details
+    4. restaurant page styling
+    5. Back-end connections
+    6. braintree API for checkout

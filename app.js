@@ -83,7 +83,7 @@ app.controller("mycontroller", ['$routeParams', '$http', '$scope', function ($ro
 
 app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterFilter', function ($routeParams, $http, $scope, filterFilter) {
     var res_id = $routeParams.res_id;
-    $scope.overview = false;
+    $scope.overview = true;
     $scope.review = false;
     $scope.menu = false;
     //functions for displaying the tabs on click on the restaurants page

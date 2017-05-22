@@ -46,13 +46,13 @@
         <div class="resNavBar">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link active resNavItem" ng-click="displayoverview()" style="color:black; border: 1px solid #efefef;">Overview</a>
+                    <a class="nav-link {{overview ? 'active' : ''}} resNavItem" ng-click="displayoverview()" style="color:black; border: 1px solid #efefef;">Overview</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link resNavItem" ng-click="displayreview()" style="color:black; border: 1px solid #efefef;">Reviews</a>
+                    <a class="nav-link {{review ? 'active' : ''}} resNavItem" ng-click="displayreview()" style="color:black; border: 1px solid #efefef;">Reviews</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link resNavItem" ng-click="displaymenu()" style="color:black; border: 1px solid #efefef;">Menu</a>
+                    <a class="nav-link {{menu ? 'active' : ''}} resNavItem" ng-click="displaymenu()" style="color:black; border: 1px solid #efefef;">Menu</a>
                 </li>
             </ul>
             
