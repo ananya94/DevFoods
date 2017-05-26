@@ -133,8 +133,14 @@ app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterF
         })
         console.log($scope.selection);
     };
+
     //controller brackets    
 }]);
+//progress bar controller
+app.controller("progressBar", function () {
+    
+        $("body").removeClass("container1");
+});
 //Router configurations
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         //$locationProvider.html5Mode(true);
@@ -146,6 +152,9 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         }).when("/restaurant/:res_id", {
             templateUrl: "templates/restaurants.html",
             controller: "restaurantDetails"
+        }).when("/progress", {
+            templateUrl: "templates/progress.html",
+            controller: "progressBar"
         });
 }
 ]);

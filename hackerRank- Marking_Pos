@@ -1,0 +1,43 @@
+
+import json
+class MarkingPositionMonitor:
+    def __init__(self):
+    #initializing the marking_position and the hash for the orders
+        self.marking_pos = 0
+        self.orders= {}
+    
+    def on_event(self, message):
+        order = json.loads(message) # converting to json for access
+        if(order['type'] == 'NEW'):
+            #creating a new order
+            self.orders[order['order_id']] = {'type':order['type'],'side':order['side'],'quantity':order['quantity']}
+            if order['side'] == 'SELL':
+                #updating the marking_position to 'short'
+                self.marking_pos = self.marking_pos - self.orders[order['order_id']]['quantity']
+        elif(order['type'] == 'ORDER_REJECT'):
+            if order['order_id'] in self.orders:
+                if self.orders[order['order_id']]['side'] == 'SELL':
+                    self.marking_pos = self.marking_pos + self.orders[order['order_id']]['quantity']
+                del self.orders[order['order_id']]
+                
+        elif(order['type'] == 'CANCEL_ACK'):
+            if order['order_id'] in self.orders:
+                if self.orders[order['order_id']]['side'] == 'SELL':
+                    self.marking_pos = self.marking_pos + self.orders[order['order_id']]['quantity']
+                del self.orders[order['order_id']]
+         
+        elif(order['type'] == 'FILL'):
+            if order['order_id'] in self.orders:
+                if self.orders[order['order_id']]['side'] == 'BUY':
+                    self.marking_pos = self.marking_pos + order['filled_quantity']
+                
+                self.orders[order['order_id']]['quantity'] -= order['filled_quantity']
+                if self.orders[order['order_id']]['quantity'] == 0:
+                    del self.orders[order['order_id']]
+
+        if order['order_id'] in self.orders:
+            self.orders[order['order_id']]['type'] = order['type']
+
+        return self.marking_pos
+   
+    
