@@ -3,11 +3,11 @@
     <h1>Delivery to your Doorstep.</h1>
     <h2>You must be hungry!</h2>
     <div class="searchResults" ng-controller="searchRes">
-        <input type="text" id="address" ng-keypress="enter($event)" placeholder="Enter your city" /><button type="button" class="btn btn-default btn-circle">GO</button>
+        <input type="text" id="tags" ng-keypress="enter($event)" placeholder="Enter your city" />
+        <button type="button" class="btn btn-default btn-circle" onclick="city_redirect()">GO</button>
+        <input type="hidden" id="selected_city_id" />
         <div ng-repeat='info in location1' ng-model='location1'>
-            <ul>
-                <li><a ng-href="#!/city/{{info.id}}">{{info.name}},{{info.country_name}}</a></li>
-            </ul>
+                <li><a ng-href="#!/city/{{info.id}}">{{info.name}}</a></li>
         </div>
     </div>
 </div>

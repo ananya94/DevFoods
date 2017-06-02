@@ -27,7 +27,6 @@ def connection():
                 'dish_price': record[3],
                 'quantity': record[4]
             }]
-    print(s)
     conn.close()
 
     return jsonify(s)

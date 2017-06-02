@@ -1,158 +1,354 @@
-.logo{
+.logo {
     border: 0;
     width: auto;
     height: auto;
     max-width: 50px;
     max-height: 50px;
 }
-.navbar-brand 
-{
+
+.navbar-brand {
     padding-top: 0;
     margin-right: 10px;
 }
-.maintext{
+
+.maintext {
     margin-top: 19%;
-    margin-left:20px;
+    margin-left: 20px;
 }
-body{
-    
+
+body {
     font-family: 'Montserrat', sans-serif;
     background-color: #F3F3F3;
-   
 }
-.transparent{
-        background-color: rgba(255,255,255,0.39) !important;
+
+.transparent {
+    background-color: rgba(255, 255, 255, 0.39) !important;
 }
-.container1{
-     background-image: url("/templates/eaters-collective-132773.jpg");
+.transparent a{
+    text-decoration: none;
+    color: black;
+}
+
+.container1 {
+    background-image: url("/templates/eaters-collective-132773.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
-#address{
+
+#address {
     width: 218px;
     height: 28px;
     appearance: none;
     margin-left: 4px;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 .btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 50%;
-  background-color: #25B7D3;
-  color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 50%;
+    background-color: #25B7D3;
+    color: white;
 }
+
 .btn-circle.btn-lg {
-  width: 35px;
-  height: 35px;
-  font-size: 16px;
-  line-height: 1.33;
-  border-radius: 25px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    line-height: 1.33;
+    border-radius: 25px;
 }
-.modal-header{
+
+.modal-header {
     padding-bottom: inherit;
 }
-.left{
+
+.left {
     float: left;
     margin: 10px;
     width: 400px;
     padding: 3px;
 }
-.navbar{
+
+.navbar {
     position: relative;
 }
 
-#map{
-    height:400px;!important
-    width: auto;!important
-    display:block;!important
-    max-height: auto;!important
+#map {
+    height: 400px;
+    !important width: auto;
+    !important display: block;
+    !important max-height: auto;
+    !important
 }
 
-#map img{
+#map img {
     max-height: none;
 }
-.featured_image{
-    height: 500px; 
-    width:600px;
+
+.featured_image {
+    height: 500px;
+    width: 600px;
 }
-.restaurant{
+
+.featuredimage {
+    width: 100%;
+}
+
+.All_restaurant{
+    width: 89%;
+    margin: 0 auto;
+    background: #fcfcfc;
+    margin-top: -50px;
+    z-index: 1000;
+    position: relative;
+    border-radius: 1%;
+}
+
+.restaurant {
     background-color: #F1F5F1;
-    
 }
-.restauranttext{
-    font-weight:bold;
+
+.restauranttext {
+    font-weight: bold;
     font-size: 14px;
+    width: 75%;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 1%;
+    box-sizing: border-box;
+    border: 1px solid #eee
 }
 
 .float_button {
     text-align: right;
 }
-.restauranttitle{
-    background-color: #FAFAFA;
-    border-bottom: 3px solid #E7E7E8;
-    padding-left: 40px;
+
+.restauranttitle {
     margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
-.rating_button{
+
+.rating_button {
     display: inline-block;
     clear: left;
     margin-right: inherit;
+    margin-top: 4px;
 }
-.picture{
+
+.picture {
     text-align: center;
     margin-top: auto;
 }
+
 .resNavBar {
     background-color: #FFF;
     width: 90%;
     margin: 0 auto;
-    
 }
-.restaurantReviews{
+
+.restaurantReviews {
     list-style: none;
     padding: 10px;
 }
-.restaurantReviews li:nth-child(even){
+
+.restaurantReviews li:nth-child(even) {
     background-color: #F3F3F3;
 }
-.restaurantReviews li{
+
+.restaurantReviews li {
     padding: 10px;
 }
+
 .restaurantoverview {
-   list-style: none;
+    list-style: none;
     padding: 10px;
-} 
-.restaurantoverview li{
-    padding: 5px;   
 }
+
+.restaurantoverview li {
+    padding: 5px;
+}
+
+
 /*
 .restaurantoverview li:nth-child(even){
    background-color: #F3F3F3; 
 }
 */
+
 .restaurantmenu {
     padding: 10px;
+    text-align: -webkit-auto;
+    padding-left: inherit;
 }
+
 .nav-item .active {
     background-color: #eee;
 }
+
 #myProgress {
-  width: 100%;
-  background-color: #ddd;
-  margin: 0 auto;
+    width: 100%;
+    background-color: #ddd;
+    margin: 0 auto;
 }
 
 #myBar {
-  width: 10%;
-  height: 30px;
-  background-color: #4CAF50;
+    width: 10%;
+    height: 30px;
+    background-color: #4CAFE7;
+}
+
+#loader {
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: https: //s-media-cache-ak0.pinimg.com/originals/85/86/a2/8586a2f7758b80dacb2ee0babc535237.gif;
+    animation: spin 2s linear infinite;
+    margin-left: 470px;
+    margin-top: 7%;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Add animation to "page content" */
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: -webkit-left;
+    margin-left: 5%;
+}
+
+.checkoutContact {
+    float: left;
+    width: 30%;
+}
+
+.checkoutAddress {
+    float: left;
+    width: 30%;
+    margin: 10px;
+}
+
+.checkoutBilling {
+    float: left;
+    width: 30%;
+}
+
+.YourBag {
+    float: right;
+    margin: 20px;
+    min-height: 100vh;
+    width: 30%;
+    background-color: #FAFAFA;
+    border-left: 3px solid #E7E7E8;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5)!important;
+    background-size: cover;
+}
+
+#stateOption {
+    max-width: 170px;
+}
+
+.YourBag a {
+    text-decoration: none;
+    color: black;
+}
+
+.checkoutDetails {
+    width: 60%;
+}
+
+.checkDetails h3 {
+    margin: 10px;
+}
+
+
+/*
+.YourBag{
+    color: white;
+    font-size: 14px;
+font-weight: bold;}
+*/
+
+.yourBag_background {
+    background-image: url(templates/nordwood-themes-162928.jpg);
+}
+
+.ProgressBar {
+    background-color: #fafafa;
+    margin: 10% auto 4% auto;
+    width: 87%;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+}
+#ShowText{
+    font-size: 40px;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
 }

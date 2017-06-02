@@ -81,7 +81,7 @@ app.controller("mycontroller", ['$routeParams', '$http', '$scope', function ($ro
     }
 }])
 
-app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterFilter', function ($routeParams, $http, $scope, filterFilter) {
+app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterFilter','SelectedDishes', function ($routeParams, $http, $scope, filterFilter, SelectedDishes) {
     var res_id = $routeParams.res_id;
     $scope.overview = true;
     $scope.review = false;
@@ -117,9 +117,12 @@ app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterF
 
     })
     //calling the local server API containing the cuisine and relative dishes
-    $http.get("http://127.0.0.1:5000/").then(function (response) {
-        $scope.menucontent = response.data;
-    })
+    if ($scope.menucontent == undefined) {
+        $http.get("http://127.0.0.1:5000/").then(function (response) {
+            $scope.menucontent = response.data;
+            showPage();
+        })
+    }
 
     $scope.selection = [];
     //checking for the selected dishes and pushing into the selection array for furthur reference
@@ -127,20 +130,88 @@ app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterF
         angular.forEach($scope.menucontent, function (items) {
             angular.forEach(items, function (item) {
                 if (item.quantity == true) {
-                    $scope.selection.push(item.dish_name)
+                    $scope.selection.push({'dish_id': item.dish_id,
+                                           'dish_name': item.dish_name, 
+                                           'dish_price': item.dish_price});
                 }
             })
         })
-        console.log($scope.selection);
+        
+        SelectedDishes.setDishes($scope.selection);
+        window.location.href = '#!/checkout';
     };
 
     //controller brackets    
 }]);
 //progress bar controller
-app.controller("progressBar", function () {
-    
-        $("body").removeClass("container1");
+app.controller("progressBar", function ($scope) {
+
+    $("body").removeClass("container1");
+    $scope.move = function (){
+        var elem = document.getElementById("myBar");
+        var width = 15;
+        var id = setInterval(frame, 1000);
+        var progress_text= {
+            15 : "We've Got This!",
+            30: "Chef's at Work",
+            55: "Making Things look Pretty",
+            70: "Almost There, Fingers crossed for no traffic",
+            100: "BON APPETIT! Another round?"
+        }
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                width = width + 5;
+                elem.style.width = width + '%';
+                if (width in progress_text) {
+                    $('#ShowText').fadeOut('slow', function() {
+                        $('#ShowText').text(progress_text[width]);
+                    });
+                    $('#ShowText').fadeIn()
+                   }
+            }
+        }
+    }
+    console.log('hello there');
+    $scope.move();
 });
+
+//controller for checkout page
+app.factory('SelectedDishes', function(){
+    var selected = {
+        
+    };
+    return{
+        getDishes : function(){
+            return selected;
+        },
+        setDishes: function(vals) {
+            selected = vals;
+        }
+    }
+})
+app.controller("checkoutController", function($scope, $http, SelectedDishes){
+     $("body").removeClass("container1");
+    $http.get("./states.json").then(function(results){
+        $scope.states = results.data;
+        console.log($scope.states);
+    });
+    $scope.selected_dishes = SelectedDishes.getDishes();
+    console.log($scope.selected_dishes);
+    
+    $scope.getTotal = function(){
+        var total= 0;
+        for(i in $scope.selected_dishes){
+            total +=  $scope.selected_dishes[i].dish_price;
+//            console.log($scope.selected_dishes[0].dish_price);
+        }
+        return total;
+    }
+})
+
+
 //Router configurations
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         //$locationProvider.html5Mode(true);
@@ -155,6 +226,9 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         }).when("/progress", {
             templateUrl: "templates/progress.html",
             controller: "progressBar"
+        }).when("/checkout",{
+            templateUrl: "templates/checkout.html",
+            controller: "checkoutController"
         });
 }
 ]);
