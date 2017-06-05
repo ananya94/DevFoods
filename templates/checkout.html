@@ -54,17 +54,19 @@
                 <input type="date" placeholder="Expiry Date">
             </div>
         </div>
-            <button class="button_style" type="submit"><a ng-href="#!/progress" class="checkout_button">CHECK OUT</a></button>
+        <button class="button_style" type="submit"><a ng-href="#!/progress" class="checkout_button">CHECK OUT</a></button>
     </div>
     <div class="yourBag_background">
         <div class="YourBag">
-            <!--       <img class="lunchbox" src="templates/hot-box1-lg.jpg">-->
-            <h2>Your Bag</h2>
-            <div class="selected" ng-repeat="dishes in selected_dishes">
-                {{dishes.dish_name}}: {{dishes.dish_price}}
-            </div>
-            <div>
-                <hr><h3>Total: {{ getTotal() }} $</h3>
+            <div class="well">
+                <h2>Your Bag</h2>
+                <hr>
+                <div>
+                    <div class="selected_bag col-xs-12" ng-repeat="dishes in selected_dishes">
+                        {{dishes.dish_name}}:{{dishes.dish_price}} $
+                    </div>
+                    <hr/><h3>Total: {{ getTotal() }} $</h3>
+                </div>
             </div>
         </div>
     </div>

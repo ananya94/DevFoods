@@ -29,10 +29,12 @@ body {
     background-color: rgba(255, 255, 255, 0.39) !important;
 }
 
+/*
 .transparent a {
     text-decoration: none;
     color: black;
 }
+*/
 
 .container1 {
     background-image: url("/templates/eaters-collective-132773.jpg");
@@ -42,6 +44,9 @@ body {
 .infoWindow{
     text-align: center;
     
+}
+.info_details{
+    font-weight: bold;
 }
 #address {
     width: 218px;
@@ -165,7 +170,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .new_image{
     width: 100%;
-    max-height: 400px;
+    max-height: 450px;
 }
 
 .resNavBar {
@@ -223,7 +228,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #myBar {
     width: 10%;
-    height: 30px;
+    height: 20px;
     background-color: #4CAFE7;
 }
 
@@ -318,13 +323,15 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #FAFAFA;
     border-left: 3px solid #E7E7E8;
     text-align: center;
-    background-image: url(templates/nordwood-themes-162928.jpg);
+    background-image: url(templates/cel-lisboa-60315.jpg);
     background-color: rgba(255, 255, 255, 0.5)!important;
     background-size: cover;
-    opacity: 0.8;
+    background-repeat: no-repeat;
     color: black;
 }
-
+.well {
+    opacity: .8;
+}
 .YourBag a {
     text-decoration: none;
     color: black;
@@ -345,14 +352,9 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 14px;
 font-weight: bold;}
 */
-
-.yourBag_background {
-    background-image: url(templates/nordwood-themes-162928.jpg);
-}
-
 .ProgressBar {
     background-color: #fafafa;
-    margin: 10% auto 4% auto;
+    margin: 0 auto;
     width: 87%;
     font-family: 'Varela Round', sans-serif;
     font-size: 20px;
@@ -401,4 +403,14 @@ font-weight: bold;}
     padding: 12px 16px;
     margin-bottom: 4px;
     width: 30%;
+}
+.selected_bag{
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+.progress_style{
+    background-image: url(templates/clem-onojeghuo-97089.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }

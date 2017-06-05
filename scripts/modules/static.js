@@ -27,7 +27,9 @@ static1.directive("modalText", function () {
 //controller for triggering the search options
 static1.controller("searchRes", function ($http, $scope) {
     getlocation();
-    $("body").addClass("container1")
+    $("body").removeClass("progress_style")
+    $("body").addClass("container1");
+    
 });
 
 var getlocation = function () {

@@ -67,7 +67,7 @@ app.controller("mycontroller", ['$routeParams', '$http', '$scope', function ($ro
             //creating an infoWindow specific to the restaurant displaying the name
             var infoWndw = new google.maps.InfoWindow();
             marker.addListener('mouseover', function () {
-                infoWndw.setContent('<div class="infoWindow">' + this.restaurant.name + this.restaurant.address+ '</div>');
+                infoWndw.setContent('<div class="infoWindow">' + this.restaurant.name + ('<div class="info_detail">' +this.restaurant.address+'</div>')+ '</div>');
                 infoWndw.open(map, this);
                 activeInfoWindow = infoWndw;
             });
@@ -78,6 +78,7 @@ app.controller("mycontroller", ['$routeParams', '$http', '$scope', function ($ro
                 window.location.hash = "#!/restaurant/" + this.restaurant.res_id;
             });
         }
+        $("body").removeClass("progress_style");
         $("body").removeClass("restaurant");
         $("body").addClass("container1");
     }
@@ -114,7 +115,7 @@ app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterF
             $(".picture").prepend('<img class="new_image" src="templates/shanice-garcia-43229.jpg">');
            }
     })
-
+    $("body").removeClass("progress_style");
     $(".container1").removeClass("container1");
     $("body").addClass("restaurant");
     //API call for reviews tab
@@ -153,6 +154,7 @@ app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterF
 app.controller("progressBar", function ($scope) {
 
     $("body").removeClass("container1");
+    $("body").addClass("progress_style");
     $scope.move = function (){
         var elem = document.getElementById("myBar");
         var width = 15;
@@ -199,6 +201,7 @@ app.factory('SelectedDishes', function(){
     }
 })
 app.controller("checkoutController", function($scope, $http, SelectedDishes){
+    $("body").removeClass("progress_style");
      $("body").removeClass("container1");
     $http.get("./states.json").then(function(results){
         $scope.states = results.data;
