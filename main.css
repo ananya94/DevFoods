@@ -39,7 +39,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.infoWindow{
+    text-align: center;
+    
+}
 #address {
     width: 218px;
     height: 28px;
@@ -146,7 +149,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 auto;
     padding: 0 40px;
 }
-
+.res_address{
+    font-weight: normal;
+}
 .rating_button {
     display: inline-block;
     clear: left;
@@ -158,13 +163,30 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     margin-top: auto;
 }
+.new_image{
+    width: 100%;
+    max-height: 400px;
+}
 
 .resNavBar {
     background-color: #FFF;
     width: 90%;
     margin: 0 auto;
 }
-
+.restaurantoverview li{
+    padding: 5px;
+    float: left;
+    width: 50%;
+}
+.f_left{
+    margin: 6px;
+}
+.lab{
+        font-size: 18px;
+}
+.restaurantoverview ul{
+    list-style: none;
+}
 .restaurantReviews {
     list-style: none;
     padding: 10px;
@@ -175,24 +197,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .restaurantReviews li {
-    padding: 10px;
+    padding: 3px;
 }
 
 .restaurantoverview {
     list-style: none;
     padding: 10px;
 }
-
-.restaurantoverview li {
-    padding: 5px;
-}
-
-
-/*
-.restaurantoverview li:nth-child(even){
-   background-color: #F3F3F3; 
-}
-*/
 
 .restaurantmenu {
     padding: 10px;
@@ -307,8 +318,11 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #FAFAFA;
     border-left: 3px solid #E7E7E8;
     text-align: center;
+    background-image: url(templates/nordwood-themes-162928.jpg);
     background-color: rgba(255, 255, 255, 0.5)!important;
     background-size: cover;
+    opacity: 0.8;
+    color: black;
 }
 
 .YourBag a {
@@ -353,23 +367,38 @@ font-weight: bold;}
     margin-top: 0px;
     margin-bottom: 0px;
 }
-
+.ready_for_happiness{
+    margin-left: 7px;
+}
 .contact_details{
     display: grid;
     position: absolute;
     clear: left;
+    width: 60%
 }
 .checkoutContact{
     clear: left;
 }
 .mlt10{
     margin-top: 10px;
-    margin-left: 10px;
+}
+.checkoutDetails{
+    width: 100%
+}
+.checkout_button{
+    text-decoration: none;
+    color: black;
+}
+.button_style{
+    width=90%;
+    border: 1px solid #ededed;
+    border-radius: 2px;
+    background: linear-gradient( #fcfcfc, #e5e5e5);
 }
 .checkoutDetails input,.checkoutDetails select{
     border: 2px solid rgba(0,0,0,0.2);
         border-radius: 4px;
     padding: 12px 16px;
     margin-bottom: 4px;
-    width: 100%;
+    width: 30%;
 }

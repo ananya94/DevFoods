@@ -38,7 +38,7 @@ var getlocation = function () {
                 dataType: "jsonp",
                 data: {
                     q: request.term,
-                    count: 10,
+                    count: 5,
                     apikey: '234ee45c527e2306d02951fd1cf82a89'
                 },
                 success: function (data) {

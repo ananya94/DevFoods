@@ -18,7 +18,8 @@ app.controller("mycontroller", ['$routeParams', '$http', '$scope', function ($ro
                 latitude: item.restaurant.location.latitude,
                 longitude: item.restaurant.location.longitude,
                 name: item.restaurant.name,
-                res_id: item.restaurant.R.res_id
+                res_id: item.restaurant.R.res_id,
+                address: item.restaurant.location.address
             })
         });
 
@@ -58,14 +59,15 @@ app.controller("mycontroller", ['$routeParams', '$http', '$scope', function ($ro
                 map: map,
                 restaurant: {
                     name: markers[i].name,
-                    res_id: markers[i].res_id
+                    res_id: markers[i].res_id,
+                    address : markers[i].address,
                 }
             });
 
             //creating an infoWindow specific to the restaurant displaying the name
             var infoWndw = new google.maps.InfoWindow();
             marker.addListener('mouseover', function () {
-                infoWndw.setContent('<div class="infoWindow">' + this.restaurant.name + '</div>');
+                infoWndw.setContent('<div class="infoWindow">' + this.restaurant.name + this.restaurant.address+ '</div>');
                 infoWndw.open(map, this);
                 activeInfoWindow = infoWndw;
             });
@@ -107,6 +109,10 @@ app.controller("restaurantDetails", ['$routeParams', '$http', '$scope', 'filterF
     //API call for overview tab
     $http.get("https://developers.zomato.com/api/v2.1/restaurant?res_id=" + res_id + "&apikey=234ee45c527e2306d02951fd1cf82a89").then(function (response) {
         $scope.details = response.data;
+        if($scope.details.featured_image == ""){
+            $("body").removeClass(".feauturedimage");
+            $(".picture").prepend('<img class="new_image" src="templates/shanice-garcia-43229.jpg">');
+           }
     })
 
     $(".container1").removeClass("container1");

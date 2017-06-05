@@ -27,13 +27,14 @@
     <div class="restauranttext">
 
         <div class="picture">
-            <img class="featuredimage" ng-src='{{details.featured_image}}' onerror="this.src='templates/shanice-garcia-43229.jpg'">
+            <img class="featuredimage" ng-src='{{details.featured_image}}'>
         </div>
         <div class="All_restaurant">
             <div class="restauranttitle row">
                 <div class="">
                     <h1 style="margin-top: 10px; margin-bottom: 10px;">{{details.name}}</h1>
                 </div>
+                <div class="res_address">{{details.location.address}}</div>
                 <div class=" float_button col-xs-6" style="padding-right: 0px; padding-left: 0px; margin-top: -53px; margin-right: 4px; float: right;">
                     <button type="button" class="btn btn-success btn-lg rating_button" style="margin-left: 10px;">{{details.user_rating.aggregate_rating}} / 5</button>
                 </div>
@@ -54,16 +55,23 @@
                 </ul>
 
 
-                <div ng-show="overview"><br>
-                    <ul class="restaurantoverview">
-                        <li>Address: {{details.location.address}}</li>
-                        <li>Cusinies: {{details.cuisines}}</li>
-                        <li>Average cost for two: {{details.average_cost_for_two}}</li>
-                        <li>Price Range: {{details.price_range}}</li>
-                        <li>Rating: {{details.user_rating.rating_text}}, {{details.user_rating.aggregate_rating}}</li>
-                        <li>Delivery Online: Yes</li>
-                        <li>Is delivering now: Yes</li>
-                    </ul>
+                <div ng-show="overview" class="restaurantoverview row"><br>
+
+                    <div class="f_left col-xs-6">
+                        <div class="lab">Address:</div> <span class="res_address">{{details.location.address}}</span></div>
+                    <div class="f_left col-xs-5">
+                        <div class="lab">Cusinies:</div><span class="res_address">{{details.cuisines}}</span></div>
+                    <div class="f_left col-xs-6">
+                    <div class="lab">Cost for two:</div><span class="res_address"> {{details.average_cost_for_two}}$</span></div>
+                    <div class="f_left col-xs-5">
+                        <div class="lab">Price Range:</div><span class="res_address">{{details.price_range}}/5</span></div>
+                    <div class="f_left col-xs-6">
+                        <div class="lab">Rating:</div><span class="res_address">{{details.user_rating.rating_text}}, {{details.user_rating.aggregate_rating}}</span></div>
+                    <div class="f_left col-xs-5">
+                        <div class="lab">Delivery Online:</div><span class="res_address">Yes</span></div>
+                    <div class="f_left col-xs-6">
+                        <div class="lab">Delivering now: </div><span class="res_address">Yes</span></div>
+
                 </div>
 
 
@@ -78,7 +86,7 @@
                 <div class="restaurantmenu row" ng-show="menu">
                     <div id="loader"></div>
                     <div id="myDiv">
-                        <div ng-repeat="(cuisine, dishes) in menucontent" class="restaurantMenu col-xs-4">
+                        <div ng-repeat="(cuisine, dishes) in menucontent" class="restaurantMenu col-xs-5">
 
                             <div id="dishes">
                                 <h1>{{cuisine}}</h1>
@@ -89,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="selectedDishes col-xs-4">
+                        <div class="selectedDishes col-xs-8">
                             <button type="submit" ng-click="toggleselection()">CHECKOUT</button>
                         </div>
                     </div>
