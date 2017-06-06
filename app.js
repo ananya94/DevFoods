@@ -162,7 +162,7 @@ app.controller("progressBar", function ($scope) {
         var progress_text= {
             15 : "We've Got This!",
             30: "Chef's at Work",
-            55: "Making Things look Pretty",
+            45: "Making Things look Pretty",
             70: "Almost There, Fingers crossed for no traffic",
             100: "BON APPETIT! Another round?"
         }
@@ -182,7 +182,6 @@ app.controller("progressBar", function ($scope) {
             }
         }
     }
-    console.log('hello there');
     $scope.move();
 });
 
@@ -218,6 +217,29 @@ app.controller("checkoutController", function($scope, $http, SelectedDishes){
         }
         return total;
     }
+    $(function() {
+    $('.date-picker').datepicker( {
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'MM yy',
+        onClose: function(dateText, inst) { 
+            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).val($.datepicker.formatDate('MM yy', new Date(year, month, 1)));
+        }
+    });
+    
+     $(".date-picker").focus(function () {
+        $(".ui-datepicker-calendar").hide();
+        $("#ui-datepicker-div").position({
+            my: "center top",
+            at: "center bottom",
+            of: $(this)
+        });
+    });
+        
+    });
 })
 
 

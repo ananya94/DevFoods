@@ -203,8 +203,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .restaurantReviews li {
     padding: 3px;
+    margin: 5px;
+    margin-bottom: 15px;
 }
-
+.restuarant_review_rating{
+    font-weight: normal;
+    margin-bottom: 2px;
+}
 .restaurantoverview {
     list-style: none;
     padding: 10px;
