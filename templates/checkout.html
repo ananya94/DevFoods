@@ -40,7 +40,7 @@
                     <div class="selected_bag col-xs-12" ng-repeat="dishes in selected_dishes">
                         {{dishes.dish_name}}:{{dishes.dish_price}} $
                     </div>
-                    <hr/><h3>Total: {{ getTotal() }} $</h3>
+                    <hr/><h3>Total: {{ getTotal() | number: 2 }} $</h3>
                 </div>
             </div>
         </div>
