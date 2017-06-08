@@ -1,15 +1,12 @@
 1. For the Menu tab in restaurants page, Hello_world (available in the templates folder) holds the dict for the cuisines and the assosiated dishes. To run:
     i. Install flask: conda install -c anaconda flask=0.12.2
     ii. Install CORS : conda install -c blaze flask-cors=2.1.2 (allowing cross domain communication)
-    iii. Write the python file: import flask, flask cors, jsonify; define the relative dictionaries and return the json version of the dict.
-    iv. Compile the python file: python hello_world.py
-    v. set FLASK_APP = hello_wolrd.py
+    iii.a. Write the python file(hello_world.py): import flask, flask cors, jsonify; define the relative dictionaries and return the json version of the dict.
+    iii.b. Make sure you have compiled the hello_world.py once before running the queries on the database created
+    iv. Compile the python file: python python_run.py
+    v. set FLASK_APP = python_run.py
     v. flask run
-    * Connected to 127.0.0.1.1500 - API available on the URL. 
-2. TO-DO:
-    1. Drop-down menu on index page
-    2. City page clean up
-    3. Map Markers: Put in details
-    4. restaurant page styling
-    5. Back-end connections
-    6. braintree API for checkout
+    * Connected to 127.0.0.1.1500 - API available on the URL.
+   
+   to note- The Hello_world.py file is used to create a hash for the values of cuisines and relevant dishes. Once the object is jsonfied, the queries 
+   to select the different cuisines are run from the python_run. py
