@@ -32,6 +32,7 @@ static1.controller("searchRes", function ($http, $scope) {
     
 });
 
+//from line 29, getting the locations 
 var getlocation = function () {
     $("#tags").autocomplete({
         source: function (request, response) {
@@ -63,6 +64,7 @@ var getlocation = function () {
     });
 };
 
+//storing the selected city_id
 function city_redirect() {
     if ($('#selected_city_id').val() != '') // to check if user selected a city
         window.location.hash = '#!/city/' + $('#selected_city_id').val();
